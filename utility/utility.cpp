@@ -399,7 +399,7 @@ int main(){
         }
         else if (input == "5"){
             while (true) {
-                printCipherMenu("ШИФР ВИЖЕНЕРА");
+                printCipherMenu("ШИФР ПЛЕЙФЕРА");
                 cout << "Выберите вариант: ";
                 getline(cin, input);
 
@@ -414,7 +414,7 @@ int main(){
                     cin >> key;
                     cout << "Введите слово: ";
                     cin >> word;
-                    cout << "Шифрованное слово: " << encryptVigenereCipher(word, key) << endl;
+                    cout << "Шифрованное слово: " << encryptPlayfairCipher(word, key) << endl;
                     cout << "Введите любую букву: ";
                     cin >> word;
                 }
@@ -425,7 +425,7 @@ int main(){
                     cin >> key;
                     cout << "Введите слово: ";
                     cin >> word;
-                    cout << "Дешифрованное слово: " << decryptVigenereCipher(word, key) << endl;
+                    cout << "Дешифрованное слово: " << decryptPlayfairCipher(word, key) << endl;
                     cout << "Введите любую букву: ";
                     cin >> word;
                 }
