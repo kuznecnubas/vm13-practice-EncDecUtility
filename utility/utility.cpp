@@ -15,6 +15,7 @@ string encryptCaesarCipher(const string& text, int shift) {//шифр цезар
 
     return result;
 }
+
 string decryptCaesarCipher(const string& text, int shift) {//дешифр цезаря
     string result = "";
 
@@ -30,6 +31,7 @@ string decryptCaesarCipher(const string& text, int shift) {//дешифр цез
 
     return result;
 }
+
 string encryptVigenereCipher(const string& text, const string& key) {//шифр виженера
     string result = "";
     int textLength = text.length();
@@ -49,6 +51,7 @@ string encryptVigenereCipher(const string& text, const string& key) {//шифр 
 
     return result;
 }
+
 string decryptVigenereCipher(const string& text, const string& key) { //дешифр виженера
     string result = "";
     int textLength = text.length();
@@ -68,6 +71,7 @@ string decryptVigenereCipher(const string& text, const string& key) { //деши
 
     return result;
 }
+
 string encryptAtbashCipher(const string& text) {// Шифр Атбаш
     string result = "";
 
@@ -127,19 +131,6 @@ string decryptRailFenceCipher(const string& text, int rails) { //дешифр Ж
     }
 
     return result;
-}
-
-void generatePlayfairMatrix(const string& key, char matrix[5][5]) {
-    string preparedKey = preparePlayfairKey(key);
-    string alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
-
-    int k = 0;
-    for (char c : preparedKey + alphabet) {
-        if (preparedKey.find(c) == string::npos) {
-            matrix[k / 5][k % 5] = c;
-            k++;
-        }
-    }
 }
 
 // Подготовка ключа: приведение к верхнему регистру и замена 'J' на 'I' для шифра ключевого квадрата
