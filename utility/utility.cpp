@@ -2,7 +2,20 @@
 #include <stdio.h>
 #include <string>
 using namespace std;
+string encryptCaesarCipher(const string& text, int shift) {
+    string result = "";
 
+    for (char c : text) {
+        if (isalpha(c)) {
+            char base = isupper(c) ? 'A' : 'a';
+            result += static_cast<char>((c - base + shift) % 26 + base);
+        } else {
+            result += c;
+        }
+    }
+
+    return result;
+}
 int main(){
     system("chcp 65001");
     while (true){
